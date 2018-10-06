@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Who is Spy</string>
+
+    <!-- Game -->
+    <string name="btn_create_room">Create Game</string>
+    <string name="btn_join_room">Join Game</string>
+
+    <string name="image_description">Missing Image</string>
+
+    <!-- Strings related to Settings -->
+    <string name="title_settings">Settings</string>
+    <string name="settings_header_user">Personal</string>
+    <string name="settings_header_system">System</string>
+    <string name="settings_summary_user">Private Information</string>
+    <string name="settings_summary_system">Common Settings</string>
+
+    <!-- Personal settings -->
+    <string name="pref_key_nickname">nickname</string>
+    <string name="pref_title_nickname">Nickname</string>
+    <string name="pref_default_nickname">doge</string>
+    <string name="pref_summary_nickname">The name will display to others in gaming</string>
+
+    <!-- System settings -->
+    <string name="pref_key_language">language</string>
+    <string name="pref_title_language">Language</string>
+    <string name="pref_default_language">0</string>
+    <string name="pref_summary_language">The language used in UI</string>
+    <string-array name="pref_list_titles_language">
+        <item>English</item>
+        <item>Simplified Chinese</item>
+    </string-array>
+    <string-array name="pref_list_values_language">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+
+    <string name="copyright">Copyright © 2018, HKUCS COMP7506. All rights reserved.</string>
+
+</resources>
