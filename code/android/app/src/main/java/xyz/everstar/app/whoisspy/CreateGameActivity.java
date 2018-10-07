@@ -1,11 +1,11 @@
 package xyz.everstar.app.whoisspy;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import butterknife.ButterKnife;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Window;
 
 public class CreateGameActivity extends AppCompatActivity {
 
@@ -14,11 +14,10 @@ public class CreateGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_create_game);
+        ButterKnife.bind(this);
 
-        ActionBar actionBar = getActionBar();
-        Log.e("bar", "begin");
+        ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            Log.e("bar", "here");
             actionBar.setTitle(getResources().getString(R.string.title_settings));
             // Display top-left Back Button
             actionBar.setDisplayHomeAsUpEnabled(true);

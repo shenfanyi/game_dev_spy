@@ -3,11 +3,11 @@
     <header
         android:fragment="xyz.everstar.app.whoisspy.SettingsActivity$SettingsUserFragment"
         android:title="@string/settings_header_user"
-        android:summary="Private Settings" />
+        android:summary="@string/settings_summary_user" />
 
     <header
         android:fragment="xyz.everstar.app.whoisspy.SettingsActivity$SettingsSystemFragment"
         android:title="@string/settings_header_system"
-        android:summary="System Settings" />
+        android:summary="@string/settings_summary_system" />
 
 </preference-headers>

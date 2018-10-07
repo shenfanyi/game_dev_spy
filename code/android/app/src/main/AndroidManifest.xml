@@ -22,7 +22,9 @@
         <activity
             android:name=".SettingsActivity"
             android:theme="@style/SettingsTheme"></activity>
-        <activity android:name=".CreateGameActivity"></activity>
+        <activity
+            android:name=".CreateGameActivity"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
