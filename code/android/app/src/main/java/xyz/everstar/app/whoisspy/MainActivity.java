@@ -24,7 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/*
+/**
  * App Main Entry
  * Everything Start From Here !
  */
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
     }
 
-    /*
+    /**
      * Top Right Menu Button
      */
     @Override
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    /*
+    /**
      * Top Right Menu Item Behavior when clicked
      */
     @Override
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*
+    /**
      * Set up language at the beginning
      */
     public void setUpLanguage() {
@@ -112,14 +112,14 @@ public class MainActivity extends AppCompatActivity {
         res.updateConfiguration(config, res.getDisplayMetrics());
     }
 
-    /*
+    /**
      * Create A Game Room, here we will create a new activity
      */
     public void createRoom(View target) {
         startActivity(new Intent(this, CreateGameActivity.class));
     }
 
-    /*
+    /**
      * Join A Game Room, here we will create a new activity
      */
     public void joinRoom(View target) {
