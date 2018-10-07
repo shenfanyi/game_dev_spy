@@ -36,4 +36,19 @@
 
     <string name="copyright">Copyright © 2018, HKUCS COMP7506. All rights reserved.</string>
 
+
+    <!-- Create Game -->
+    <string name="title_create_game">Game Configuration</string>
+    <string name="title_player_nums">Number of players</string>
+    <string name="notes_player_nums">(Including the Room Owner)</string>
+    <string name="title_judge_exist">Need a judge ?</string>
+    <string name="notes_judge_exist">Room Owner is the judge, judge can select words pair.
+        Otherwise, everyone vote for words pair.</string>
+    <string name="title_topic_select">Topic of the words pair</string>
+    <string name="text_btn_start_game">Start!</string>
+    <string-array name="judge_exist_selection">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
 </resources>
