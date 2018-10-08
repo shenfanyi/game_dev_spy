@@ -10,13 +10,13 @@
     tools:context=".CreateGameActivity"
     android:background="@color/bg_gray">
 
-    <com.google.android.material.card.MaterialCardView
-        style="@style/Widget.MaterialComponents.CardView"
-        app:cardElevation="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp" >
+    <!--<com.google.android.material.card.MaterialCardView-->
+        <!--style="@style/Widget.MaterialComponents.CardView"-->
+        <!--app:cardElevation="4dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="16dp"-->
+        <!--android:layout_marginBottom="16dp" >-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,19 +37,19 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:text="@string/title_player_nums"
                         android:textSize="18sp" />
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <TextView
                         android:layout_height="match_parent"
                         android:layout_width="match_parent"
                         android:text="@string/notes_player_nums"
                         android:textSize="12sp" />
                 </LinearLayout>
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <TextView
                     android:id="@+id/CG_text_numsPlayer"
                     android:layout_width="0dp"
                     android:layout_weight="2"
@@ -59,63 +59,21 @@
                     android:textAlignment="center"
                     android:textSize="26sp" />
             </LinearLayout>
-            <androidx.appcompat.widget.AppCompatSeekBar
+            <android.support.v7.widget.AppCompatSeekBar
                 android:id="@+id/CG_seekBar_numsPlayer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="4dp" />
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    <!--</com.google.android.material.card.MaterialCardView>-->
 
-    <com.google.android.material.card.MaterialCardView
-        style="@style/Widget.MaterialComponents.CardView"
-        app:cardElevation="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp">
+    <!--<com.google.android.material.card.MaterialCardView-->
+        <!--style="@style/Widget.MaterialComponents.CardView"-->
+        <!--app:cardElevation="4dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="16dp">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:paddingLeft="32dp"
-            android:paddingRight="32dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginBottom="8dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_height="match_parent"
-                    android:layout_width="0dp"
-                    android:layout_weight="3"
-                    android:text="@string/title_judge_exist"
-                    android:textSize="18sp" />
-                <androidx.appcompat.widget.AppCompatSpinner
-                    android:id="@+id/judge_select_spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"/>
-
-            </LinearLayout>
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text="@string/notes_judge_exist"
-                android:textAlignment="center"
-                android:textSize="12sp"
-                android:layout_marginBottom="4dp"/>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        style="@style/Widget.MaterialComponents.CardView"
-        app:cardElevation="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -124,12 +82,54 @@
             android:paddingBottom="8dp"
             android:paddingLeft="32dp"
             android:paddingRight="32dp">
-            <androidx.appcompat.widget.AppCompatTextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:text="@string/title_judge_exist"
+                    android:textSize="18sp" />
+                <Spinner
+                    android:id="@+id/judge_select_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="@string/notes_judge_exist"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:layout_marginBottom="4dp"/>
+        </LinearLayout>
+    <!--</com.google.android.material.card.MaterialCardView>-->
+
+    <!--<com.google.android.material.card.MaterialCardView-->
+        <!--style="@style/Widget.MaterialComponents.CardView"-->
+        <!--app:cardElevation="4dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" >-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp">
+            <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:text="@string/title_topic_select"
                 android:textSize="18sp" />
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/CG_btn_startGame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -138,5 +138,5 @@
                 android:onClick="startGame"
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    <!--</com.google.android.material.card.MaterialCardView>-->
 </LinearLayout>

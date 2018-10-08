@@ -1,19 +1,19 @@
 package xyz.everstar.app.whoisspy;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatSpinner;
-import androidx.appcompat.widget.AppCompatTextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.support.v7.widget.AppCompatSeekBar;
 import android.widget.SeekBar;
-
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.widget.Spinner;
 
 public class CreateGameActivity extends AppCompatActivity {
 
@@ -21,9 +21,9 @@ public class CreateGameActivity extends AppCompatActivity {
     private final int MAX_NUMS_PLAYER = 11;
 
     @BindView(R.id.CG_text_numsPlayer)AppCompatTextView textNumsPlayer;
-    @BindView(R.id.CG_seekBar_numsPlayer)SeekBar seekBarNumsPlayer;
-    @BindView(R.id.judge_select_spinner) AppCompatSpinner judgeSelectSpinner;
-    @BindView(R.id.CG_btn_startGame) MaterialButton btn_startGame;
+    @BindView(R.id.CG_seekBar_numsPlayer)AppCompatSeekBar seekBarNumsPlayer;
+    @BindView(R.id.judge_select_spinner) Spinner judgeSelectSpinner;
+    @BindView(R.id.CG_btn_startGame) Button btn_startGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class CreateGameActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
+//        textNumsPlayer.setText(String.valueOf(MIN_NUMS_PLAYER + progress));
         // Bind seekBar & textView
         seekBarNumsPlayer.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
