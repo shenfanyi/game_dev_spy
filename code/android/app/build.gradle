@@ -31,4 +31,10 @@ dependencies {
     // Butter Knife Framework
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // QMUI
+    implementation 'com.qmuiteam:qmui:1.1.3'
+
+    // Custom Font Family
+    implementation 'com.norbsoft.typefacehelper:library:0.9.0'
 }

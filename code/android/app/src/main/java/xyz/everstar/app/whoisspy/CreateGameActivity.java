@@ -15,6 +15,9 @@ import android.support.v7.widget.AppCompatSeekBar;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 
+import com.norbsoft.typefacehelper.ActionBarHelper;
+import com.norbsoft.typefacehelper.TypefaceHelper;
+
 public class CreateGameActivity extends AppCompatActivity {
 
     private final int MIN_NUMS_PLAYER = 4;
@@ -33,13 +36,15 @@ public class CreateGameActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         initLayout();
+        TypefaceHelper.typeface(this);
     }
 
     private void initLayout() {
         // Title Bar settings
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle(getResources().getString(R.string.title_create_game));
+//            actionBar.setTitle(getResources().getString(R.string.title_create_game));
+            ActionBarHelper.setTitle(actionBar, TypefaceHelper.typeface(this, R.string.title_create_game));
             // Display top-left Back Button
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
