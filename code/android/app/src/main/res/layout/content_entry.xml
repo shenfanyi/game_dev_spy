@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<android.support.v4.widget.NestedScrollView
     android:theme="@style/AppTheme"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.google.android.material.card.MaterialCardView
+        <android.support.design.card.MaterialCardView
             android:layout_marginTop="64dp"
             android:layout_marginBottom="32dp"
             android:layout_width="120dp"
@@ -28,26 +28,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:src="@mipmap/avatar" />
-        </com.google.android.material.card.MaterialCardView>
+        </android.support.design.card.MaterialCardView>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textSize="20sp"
             android:layout_marginBottom="64dp"
-            android:text="测试用占位符" />
+            android:text="Placeholder" />
 
-        <com.google.android.material.button.MaterialButton
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            style="@style/AppTheme.Button"
             android:id="@+id/Main_Btn_create"
             android:layout_gravity="center_horizontal"
             android:layout_width="256dp"
             android:layout_height="64dp"
+            android:layout_marginBottom="8dp"
             android:onClick="createRoom"
             android:text="@string/btn_create_room"/>
 
-        <com.google.android.material.button.MaterialButton
+        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+            style="@style/AppTheme.Button"
             android:id="@+id/Main_Btn_join"
             android:layout_gravity="center_horizontal"
             android:layout_width="256dp"
@@ -55,7 +58,7 @@
             android:onClick="joinRoom"
             android:text="@string/btn_join_room"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -65,4 +68,4 @@
             android:text="@string/copyright" />
 
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</android.support.v4.widget.NestedScrollView>

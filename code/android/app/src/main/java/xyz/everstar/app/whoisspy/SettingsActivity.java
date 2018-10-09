@@ -11,12 +11,10 @@ import android.preference.PreferenceFragment;
 import java.util.List;
 import java.util.Locale;
 
-import androidx.annotation.Nullable;
-
 public class SettingsActivity extends PreferenceActivity {
 
     @Override
-    protected void onCreate(@Nullable @android.support.annotation.Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Recover the top Action bar
         ActionBar actionBar = getActionBar();
@@ -43,7 +41,7 @@ public class SettingsActivity extends PreferenceActivity {
      */
     public static class SettingsUserFragment extends PreferenceFragment {
         @Override
-        public void onCreate(@Nullable @android.support.annotation.Nullable Bundle savedInstanceState) {
+        public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_user);
         }
@@ -54,7 +52,7 @@ public class SettingsActivity extends PreferenceActivity {
      */
     public static class SettingsSystemFragment extends PreferenceFragment {
         @Override
-        public void onCreate(@Nullable @android.support.annotation.Nullable Bundle savedInstanceState) {
+        public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_system);
 

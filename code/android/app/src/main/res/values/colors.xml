@@ -15,6 +15,8 @@
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
 
+    <color name="btn_border">#bebebe</color>
+
     <color name="layout_expandedTitle_textColor">#000</color>
     <color name="layout_collapsedTitle_textColor">#fff</color>
 </resources>

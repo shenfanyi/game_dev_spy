@@ -6,21 +6,21 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.norbsoft.typefacehelper.TypefaceHelper;
+import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
 import java.util.Locale;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.Main_toolBar) Toolbar toolbar;
     @BindView(R.id.Main_CollapsingToolBarLayout) CollapsingToolbarLayout collapsingToolbarLayout;
 
-    @BindView(R.id.Main_Btn_create) MaterialButton btn_create;
-    @BindView(R.id.Main_Btn_join) MaterialButton btn_join;
+    @BindView(R.id.Main_Btn_create) QMUIRoundButton btn_create;
+    @BindView(R.id.Main_Btn_join) QMUIRoundButton btn_join;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+        TypefaceHelper.typeface(this);
 
         // 实现沉浸式状态栏
         Window w = getWindow();
@@ -53,13 +54,12 @@ public class MainActivity extends AppCompatActivity {
         w.setStatusBarColor(getResources().getColor(R.color.primary_dark));
 
         // Setup Title Text
+        collapsingToolbarLayout.setCollapsedTitleTypeface(GlobalSource.FONT_ENG);
+        collapsingToolbarLayout.setExpandedTitleTypeface(GlobalSource.FONT_ENG);
         collapsingToolbarLayout.setTitle(getResources().getString(R.string.app_name));
-        collapsingToolbarLayout.setExpandedTitleColor(
-                getResources().getColor(R.color.layout_expandedTitle_textColor)
-        );
-        collapsingToolbarLayout.setCollapsedTitleTextColor(
-                getResources().getColor(R.color.layout_collapsedTitle_textColor)
-        );
+        int titleColor = getResources().getColor(R.color.layout_collapsedTitle_textColor);
+        collapsingToolbarLayout.setExpandedTitleColor(titleColor);
+        collapsingToolbarLayout.setCollapsedTitleTextColor(titleColor);
     }
 
     @Override
