@@ -1,45 +1,44 @@
 <resources>
-    <string name="app_name">Who is Spy</string>
+    <string name="app_name">谁是卧底</string>
+    <string name="app_version">Who is Spy 0.0.0</string>
 
     <!-- Game -->
-    <string name="btn_create_room">Create Game</string>
-    <string name="btn_join_room">Join Game</string>
+    <string name="btn_create_room">创建房间</string>
+    <string name="btn_join_room">加入房间</string>
 
-    <string name="image_description">Missing Image</string>
+    <string name="image_description">照片找不到啦！</string>
 
     <!-- Strings related to Settings -->
-    <string name="title_settings">Settings</string>
-    <string name="settings_header_user">Personal</string>
-    <string name="settings_header_system">System</string>
-    <string name="settings_summary_user">Private Information</string>
-    <string name="settings_summary_system">Common Settings</string>
+    <string name="title_settings">设置</string>
+    <string name="settings_header_user">个人信息</string>
+    <string name="settings_header_about">关于</string>
 
     <!-- Personal settings -->
     <string name="pref_key_nickname">nickname</string>
-    <string name="pref_title_nickname">Nickname</string>
-    <string name="pref_default_nickname">doge</string>
-    <string name="pref_summary_nickname">The name will display to others in gaming</string>
+    <string name="pref_title_nickname">昵称</string>
+    <string name="pref_default_nickname">二狗子</string>
+    <string name="pref_summary_nickname">其他玩家能够看到这个名字喔</string>
 
     <!-- System settings -->
     <string name="pref_key_language">language</string>
-    <string name="pref_title_language">Language</string>
+    <string name="pref_title_language">语言</string>
     <string name="pref_default_language">0</string>
-    <string name="pref_summary_language">The language used in UI</string>
+    <string name="pref_summary_language">界面显示语言</string>
     <string-array name="pref_list_titles_language">
-        <item>English</item>
-        <item>Simplified Chinese</item>
+        <item>英语</item>
+        <item>简体中文</item>
     </string-array>
     <string-array name="pref_list_values_language">
         <item>0</item>
         <item>1</item>
     </string-array>
 
-    <string name="copyright">Copyright © 2018, HKUCS COMP7506. All rights reserved.</string>
+    <string name="copyright">Copyright © 2018, HKUCS COMP7506.\nAll rights reserved.</string>
 
 
     <!-- Create Game -->
-    <string name="title_create_game">Game Configuration</string>
-    <string name="title_player_nums">Number of players</string>
+    <string name="title_create_game">游戏设置</string>
+    <string name="title_player_nums">玩家人数</string>
     <string name="notes_player_nums">(Including the Room Owner)</string>
     <string name="title_judge_exist">Need a judge ?</string>
     <string name="notes_judge_exist">Room Owner is the judge, judge can select words pair.

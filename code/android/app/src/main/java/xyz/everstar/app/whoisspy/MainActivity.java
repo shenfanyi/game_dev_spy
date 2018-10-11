@@ -1,11 +1,7 @@
 package xyz.everstar.app.whoisspy;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,11 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
-import com.norbsoft.typefacehelper.TypefaceHelper;
+import com.android.volley.Response;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
-import java.util.Locale;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,19 +31,19 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.Main_toolBar) Toolbar toolbar;
     @BindView(R.id.Main_CollapsingToolBarLayout) CollapsingToolbarLayout collapsingToolbarLayout;
 
-    @BindView(R.id.Main_Btn_create) QMUIRoundButton btn_create;
-    @BindView(R.id.Main_Btn_join) QMUIRoundButton btn_join;
+    @BindView(R.id.Main_Btn_create) QMUIRoundButton btnCreate;
+    @BindView(R.id.Main_Btn_join) QMUIRoundButton btnJoin;
+
+    @BindView(R.id.Main_Text_Username) TextView textUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Don't touch
-        setUpLanguage();
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
-        TypefaceHelper.typeface(this);
 
         // 实现沉浸式状态栏
         Window w = getWindow();
@@ -54,8 +52,6 @@ public class MainActivity extends AppCompatActivity {
         w.setStatusBarColor(getResources().getColor(R.color.primary_dark));
 
         // Setup Title Text
-        collapsingToolbarLayout.setCollapsedTitleTypeface(GlobalSource.FONT_ENG);
-        collapsingToolbarLayout.setExpandedTitleTypeface(GlobalSource.FONT_ENG);
         collapsingToolbarLayout.setTitle(getResources().getString(R.string.app_name));
         int titleColor = getResources().getColor(R.color.layout_collapsedTitle_textColor);
         collapsingToolbarLayout.setExpandedTitleColor(titleColor);
@@ -65,6 +61,33 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        // Network test
+        Api.initRequestQueue(this);
+        Api.fetchUserId(new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    int code = response.getInt("code");
+                    JSONObject data = response.getJSONObject("data");
+                    if (code != 0 || data == null) {
+                        return;
+                    }
+                    String uid = data.getString("uid");
+                    textUsername.setText(uid);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                Api.verifyUserId(new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        String msg = textUsername.getText() + " : " + response;
+                        textUsername.setText(msg);
+                    }
+                });
+            }
+        });
     }
 
     /**
@@ -94,22 +117,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * Set up language at the beginning
-     */
-    public void setUpLanguage() {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String language = preferences.getString(getString(R.string.pref_key_language), "0");
-        Resources res = getBaseContext().getResources();
-        Configuration config = res.getConfiguration();
-        switch (language) {
-            case "0": config.setLocale(Locale.ENGLISH); break;
-            case "1": config.setLocale(Locale.CHINESE); break;
-            default: break;
-        }
-        res.updateConfiguration(config, res.getDisplayMetrics());
     }
 
     /**
