@@ -1,15 +1,17 @@
 package xyz.everstar.app.whoisspy;
 
 import android.app.ActionBar;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.List;
-import java.util.Locale;
 
 public class SettingsActivity extends PreferenceActivity {
 
@@ -33,10 +35,10 @@ public class SettingsActivity extends PreferenceActivity {
     @Override
     protected boolean isValidFragment(String fragmentName) {
         return SettingsUserFragment.class.getName().equals(fragmentName)
-                || SettingsSystemFragment.class.getName().equals(fragmentName);
+                || AboutFragment.class.getName().equals(fragmentName);
     }
 
-    /*
+    /**
      * User Settings
      */
     public static class SettingsUserFragment extends PreferenceFragment {
@@ -47,32 +49,14 @@ public class SettingsActivity extends PreferenceActivity {
         }
     }
 
-    /*
+    /**
      * System Settings
      */
-    public static class SettingsSystemFragment extends PreferenceFragment {
+    public static class AboutFragment extends Fragment {
+        @Nullable
         @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.pref_system);
-
-            // language setting take effect
-            Preference langPref = findPreference(getString(R.string.pref_key_language));
-            langPref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object newValue) {
-                    Resources res = getActivity().getBaseContext().getResources();
-                    Configuration config = res.getConfiguration();
-                    switch (newValue.toString()) {
-                        case "0": config.setLocale(Locale.ENGLISH); break;
-                        case "1": config.setLocale(Locale.CHINESE); break;
-                        default: break;
-                    }
-
-                    res.updateConfiguration(config, res.getDisplayMetrics());
-                    return true;
-                }
-            });
+        public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+            return inflater.inflate(R.layout.fragment_about, container, false);
         }
     }
 }
